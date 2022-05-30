@@ -10,7 +10,7 @@ const createToken = (id) => {
     })
 };
 
-// Creation d'un Compte utilisateur
+// Creation d'un utilisateur
 module.exports.signUp = async (req, res) => {
     const {lastName, firstName, email, password} = req.body
 
@@ -25,6 +25,7 @@ module.exports.signUp = async (req, res) => {
 };
 
 // Connection d'un utilisateur
+// Envoi d'un token
 module.exports.signIn = async (req, res) => {
     const { email, password} = req.body
 
@@ -40,6 +41,8 @@ module.exports.signIn = async (req, res) => {
     }
 };
 
+// Deconnection d'un utilisateur
+// On lui enlève le token généré à la connection
 module.exports.logout = async (req, res) => {
     res.cookie('jwt', '', { maxAge: 1 });
     res.redirect('/');
