@@ -1,6 +1,6 @@
 const UserModel = require('../models/userModel');
 const jwt = require('jsonwebtoken');
-const { signUpErros, signInErros } = require('../utils/errorsUtils');
+const { signUpErrors, signInErrors } = require('../utils/errorsUtils');
 const ObjectID = require('mongoose').Types.ObjectId;
 const maxAge =3 * 24 * 60 * 60 * 1000;
 
@@ -19,7 +19,7 @@ module.exports.signUp = async (req, res) => {
          res.status(201).json({ user: user._id});
     }
     catch(err) {
-        const errors = signUpErros(err);
+        const errors = signUpErrors(err);
         res.status(400).send({ errors })
     }
 };
@@ -36,7 +36,7 @@ module.exports.signIn = async (req, res) => {
         res.status(200).json({ user: user._id})
     }
     catch (err) {
-        const errors = signInErros(err);
+        const errors = signInErrors(err);
         res.status(400).json({ errors });
     }
 };

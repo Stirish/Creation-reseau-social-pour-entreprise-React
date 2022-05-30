@@ -1,12 +1,45 @@
 const PostModel = require('../models/postModel');
 const UserModel = require('../models/userModel');
+const { uploadErrors } = require('../utils/errorsUtils');
 const ObjectID = require('mongoose').Types.ObjectId;
+const fs = require('fs');
+const { promisify } = require('util');
+const pipeline = promisify(require('stream').pipeline);
 
 // Creation d'une publication
 module.exports.createPost = async (req, res) => {
+    let fileName;
+
+    if (req.file !== null) {
+        try {
+            if (
+                req.file.detectedMimeType != 'image/jpg' &&
+                req.file.detectedMimeType != 'image/png' &&
+                req.file.detectedMimeType != 'image/jpeg'
+            )
+            throw Error('invalid file');
+
+            if (req.file.size > 500000)
+                throw Error('max size');
+        }
+        catch (err) {
+            const errors = uploadErrors(err)
+            return res.status(400).json({ errors });
+        }
+        fileName = req.body.userId + Date.now() + '.jpg';
+
+        await pipeline(
+            req.file.stream,
+            fs.createWriteStream(
+                `${__dirname}/../frontend/public/uploads/posts/${fileName}`
+            )
+        );
+    }
+
     const newPost = new PostModel({
         userId: req.body.userId,
         message: req.body.message,
+        picture: req.file !== null ? './uploads/posts/' + fileName : '',
         likers: [],
     });
 
