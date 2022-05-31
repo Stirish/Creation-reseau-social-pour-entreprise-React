@@ -8,7 +8,7 @@ const Identification = () => {
     return (
         <div className='profil-page'>
             {uid ? (
-                <h1>Deconnexion</h1>
+                <h1>Vous êtes déjà inscrit et connecté</h1>
             ) : (
                 <div className='log-container'>
                     <Log signin={false} signup={true} />
