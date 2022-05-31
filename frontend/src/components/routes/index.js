@@ -8,7 +8,7 @@ const index = () => {
         <Router>
             <Routes>
                 <Route path='/' exact element={<Identification />} />
-                <Route path='/Wall' exact element={<Wall />} />
+                <Route path='/wall' exact element={<Wall />} />
             </Routes>
         </Router>
     );
