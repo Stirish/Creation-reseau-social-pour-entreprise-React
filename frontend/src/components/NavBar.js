@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { UidContext } from "./AppContext";
 import Logout from "./log/Logout";
 
 const NavBar = () => {
     const uid = useContext(UidContext);
-
+    const userData = useSelector((state) => state.userReducer)
     return (
         <nav>
             <div className='nav-container'>
@@ -21,7 +23,7 @@ const NavBar = () => {
                         <li></li>
                         <li className='welcome'>
                             <NavLink exact to='/wall'>
-                                <h5>Bienvenue sur 'Valeur dynamique'</h5>
+                                <h5>Bienvenue {userData.firstName}</h5>
                             </NavLink>
                         </li>
                         <Logout />
