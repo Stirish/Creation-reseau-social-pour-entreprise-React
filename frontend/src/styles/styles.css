@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+*::selection {
+  background: #4E5166;
+}
+
+a,
+a:visited {
+  color: #4E5166;
+}
+
+input,
+textarea {
+  resize: none;
+  border-radius: 20px;
+  width: 270px;
+  background: rgb(253, 253, 253);
+}
+
+textarea:focus {
+  box-shadow: 0 0 4px rgba(0, 22, 44, 0.1);
+}
+
+button,
+input[type=submit] {
+  background: #FD2D01;
+  color: #4E5166;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 20px 6px 20px 20px;
+}
+button:hover,
+input[type=submit]:hover {
+  background: #4E5166;
+  color: #FD2D01;
+}
+
+input[type=checkbox] {
+  box-shadow: none;
+  width: 20px;
+  margin: 10px 0;
+}
+
+i {
+  transition: 0.15s;
+}
+i:hover {
+  transform: scale(1.1);
+}
+
+body {
+  line-height: 1.4rem;
+  background: rgb(253, 253, 253);
+  color: #4E5166;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  box-shadow: 0px 2px 0px #FD2D01, 0px 5px 0px 0px rgb(219, 218, 218);
+  z-index: 10;
+  top: 0;
+}
+@media screen and (max-width: 1251px) {
+  nav {
+    padding: 0 20px;
+  }
+}
+nav::after {
+  content: "";
+  height: 45px;
+  width: 110%;
+  left: -20px;
+  top: 0;
+  position: absolute;
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.86);
+  z-index: -8;
+}
+nav .nav-container {
+  display: flex;
+  width: 100%;
+  max-width: 1190px;
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 45px;
+  align-items: center;
+}
+nav .nav-container .logo {
+  display: flex;
+  align-items: center;
+}
+nav .nav-container .logo h3 {
+  transform: translate(15px, 2px);
+  font-size: 1.5rem;
+}
+nav .nav-container .logo img {
+  width: 215px;
+}
+nav .nav-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+nav .nav-container ul .welcome {
+  transform: translateY(2px);
+}
+@media screen and (max-width: 590px) {
+  nav .nav-container ul .welcome {
+    display: none;
+  }
+}
+nav .nav-container ul li img {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+
+.profil-page {
+  margin: 80px auto 0;
+  max-width: 1200px;
+}
+.profil-page .log-container {
+  margin: 0 auto;
+}
+@media screen and (max-width: 885px) {
+  .profil-page .log-container {
+    grid-template-columns: 1fr;
+  }
+}
+.profil-page .connection-form {
+  border: none;
+  background: #fdeeee;
+  min-width: 490px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+@media screen and (max-width: 550px) {
+  .profil-page .connection-form {
+    min-width: 200px;
+  }
+}
+.profil-page .connection-form .form-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+@media screen and (max-width: 550px) {
+  .profil-page .connection-form .form-container {
+    grid-template-columns: 1fr;
+  }
+}
+.profil-page .connection-form .form-container ul li {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: 0.2s;
+}
+@media screen and (max-width: 550px) {
+  .profil-page .connection-form .form-container ul li {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.profil-page .connection-form .form-container ul .active-btn {
+  background: #FD2D01;
+}
+.profil-page .connection-form .form-container ul .active-btn:hover {
+  background: #4E5166;
+  color: #FD2D01;
+}
+.profil-page .connection-form .form-container ul li:not(.active-btn):hover {
+  transform: translateX(3px);
+}
+.profil-page .connection-form .form-container ul #login {
+  position: relative;
+}
+@media screen and (max-width: 550px) {
+  .profil-page .connection-form .form-container ul #login {
+    margin-bottom: 30px;
+  }
+  .profil-page .connection-form .form-container ul #login:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: #FFD7D7;
+  }
+}
+.profil-page .connection-form .form-container form input {
+  padding: 14px 20px;
+  margin: 0;
+  font-size: 1.2rem;
+  border-radius: 20px;
+}
+.profil-page .connection-form .form-container form input:focus {
+  box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
+}
+.profil-page .connection-form .form-container form a {
+  color: rgb(62, 62, 214);
+}
+.profil-page h1 {
+  text-align: center;
+  margin: 10px 0 6px;
+}
+
+/*# sourceMappingURL=styles.css.map */

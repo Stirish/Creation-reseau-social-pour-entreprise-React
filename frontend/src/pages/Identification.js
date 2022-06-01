@@ -12,9 +12,6 @@ const Identification = () => {
             ) : (
                 <div className='log-container'>
                     <Log signin={false} signup={true} />
-                    <div className='img-container'>
-                        <img src='./img/logos/icon-left-font.svg' alt='logo groupomania' />
-                    </div>
                 </div>
             )}
         </div>
