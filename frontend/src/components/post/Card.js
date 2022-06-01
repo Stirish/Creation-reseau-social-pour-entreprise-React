@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { dateParser, isEmpty } from "../Utils";
+import LikeButton from "./LikeButton";
 
 const Card = ({ post }) => {
     const [isLoadind, setIsLoading] = useState(true);
@@ -39,7 +40,7 @@ const Card = ({ post }) => {
                             <img src={post.picture} alt="image de la publication" className='card-pic' />
                         )}
                         <div className='card-footer'>
-                            <h6>LIKE BUTTON</h6>
+                            <LikeButton post={post} />
                         </div>
                     </div>
                 </>
