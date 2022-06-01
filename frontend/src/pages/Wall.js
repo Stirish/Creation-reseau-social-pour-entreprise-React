@@ -1,9 +1,12 @@
 import React from "react";
+import Thread from "../components/Thread";
 
 const Wall = () => {
     return(
-        <div>
-            Hello depuis Wall
+        <div className='wall'>
+            <div className='main'>
+               <Thread /> 
+            </div>
         </div>
     );
 };

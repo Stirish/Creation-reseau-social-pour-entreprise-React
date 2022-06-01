@@ -7,7 +7,7 @@ import Navbar from '../NavBar';
 const index = () => {
     return (
         <Router>
-            <Navbar />
+            
             <Routes>
                 <Route path='/' exact element={<Identification />} />
                 <Route path='/wall' exact element={<Wall />} />
