@@ -4,18 +4,18 @@ const { signUpErrors, signInErrors } = require('../utils/errorsUtils');
 const ObjectID = require('mongoose').Types.ObjectId;
 const maxAge =3 * 24 * 60 * 60 * 1000;
 
-const createToken = (id) => {
-    return jwt.sign({id}, process.env.TOKEN_SECRET, {
+const createToken = (id, isAdmin) => {
+    return jwt.sign({id, isAdmin}, process.env.TOKEN_SECRET, {
         expiresIn: maxAge
     })
 };
 
 // Creation d'un utilisateur
 module.exports.signUp = async (req, res) => {
-    const {lastName, firstName, email, password} = req.body
+    const {lastName, firstName, email, password, isAdmin} = req.body
 
     try {
-        const user = await UserModel.create({lastName, firstName, email, password });
+        const user = await UserModel.create({lastName, firstName, email, password, isAdmin });
          res.status(201).json({ user: user._id});
     }
     catch(err) {
@@ -31,9 +31,9 @@ module.exports.signIn = async (req, res) => {
 
     try {
         const user = await UserModel.login(email, password);
-        const token = createToken(user._id);
+        const token = createToken(user._id, user.isAdmin);
         res.cookie('jwt', token, { httpOnly: true, maxAge});
-        res.status(200).json({ user: user._id})
+        res.status(200).json({ user: user._id, isAdmin: user.isAdmin })
     }
     catch (err) {
         const errors = signInErrors(err);
