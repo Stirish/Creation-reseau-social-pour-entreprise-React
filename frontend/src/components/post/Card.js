@@ -6,7 +6,6 @@ import LikeButton from "./LikeButton";
 const Card = ({ post }) => {
     const [isLoadind, setIsLoading] = useState(true);
     const usersData = useSelector((state) => state.usersReducer);
-    const userData = useSelector((state) => state.userReducer);
 
     useEffect(() => {
         !isEmpty(usersData[0]) && setIsLoading(false);
@@ -28,6 +27,7 @@ const Card = ({ post }) => {
                                             .map((user) => {
                                                 if (user._id === post.userId)
                                                     return user.lastName + ' ' + user.firstName
+                                                else return null
                                             })
                                             .join('')
                                     }
@@ -37,7 +37,7 @@ const Card = ({ post }) => {
                         </div>
                         <p>{post.message}</p>
                         {post.picture && (
-                            <img src={post.picture} alt="image de la publication" className='card-pic' />
+                            <img src={post.picture} alt="illustration de la publication" className='card-pic' />
                         )}
                         <div className='card-footer'>
                             <LikeButton post={post} />

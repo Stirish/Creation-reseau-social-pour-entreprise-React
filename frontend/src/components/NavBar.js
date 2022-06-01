@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { UidContext } from "./AppContext";
