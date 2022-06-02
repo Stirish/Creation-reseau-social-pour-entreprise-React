@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import { getUsers } from './actions/usersActions';
 
-// dev tools
+// DEVTOOLS A RETIRER LORS DE LA MISE EN PROD DU SITE 
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 

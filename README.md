@@ -29,11 +29,7 @@ SI VOUS RENCONTRER UNE ERREUR LORS DE L'UPLOAD D'IMAGE LORS D'UNE PUBLICATION VE
 
 # Lancer le frontend du projet
 
-- Rendez vous dans frontend/ Puis créer un fichier '.env' (SANS LES GUILLEMETS DE DEBUT ET DE FIN)
-- faite un copié/collé de ceci :
-                                    REACT_APP_API_URL=http://localhost:5000/
-
-- Ouvrez votre terminal 'Ctrl + MAJ + P' sous visual studio code
+- Ouvrez un nouveau terminal 'Ctrl + MAJ + P' sous visual studio code
 - Rendez vous dans le sous dossier 'frontend' via la commande 'cd frontend' depuis votre terminal
 - Taper 'npm install' depuis votre terminal pour installé le dossier 'node_modules' dans le projet
 - Taper 'npm start' pour demarrer le projet
