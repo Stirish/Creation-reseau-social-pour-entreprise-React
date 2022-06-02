@@ -17,7 +17,7 @@ lien vers le site node.js: https://nodejs.org/en/
 
 - Complétez dans le fichier 'DB_USER_PASS' et 'DB_NAME' par rapport a votre cluster
 - Ouvrez votre terminal 'Ctrl + MAJ + P' sous visual studio code
-- Rendez vous dans le sous dossier 'backend' via la commande 'cd frontend' depuis votre terminal
+- Rendez vous dans le sous dossier 'backend' via la commande 'cd backend' depuis votre terminal
 - Taper 'npm install' depuis votre terminal pour installé le dossier 'node_modules' dans le projet
 - Taper 'npm start' pour demarrer le projet 
 
@@ -25,7 +25,7 @@ lien vers le site node.js: https://nodejs.org/en/
 
 SI VOUS RENCONTRER UNE ERREUR LORS DE L'UPLOAD D'IMAGE LORS D'UNE PUBLICATION VEUILLEZ VOUS RENDRE A CETTE ENDROIT 'backend/node_modules/fs-temp/lib/write-stream.js':
 
-- A LA LIGNE 6 REMPLACER LE CONTENU ######### PAR 'WriteStream.call(this, '', options)' (SANS LES GUILLEMETS DE DEBUT ET DE FIN)
+- A LA LIGNE 6 REMPLACER LE CONTENU 'WriteStream.call(this, null, options)' par 'WriteStream.call(this, '', options)' (SANS LES GUILLEMETS DE DEBUT ET DE FIN)
 
 # Lancer le frontend du projet
 
@@ -33,10 +33,3 @@ SI VOUS RENCONTRER UNE ERREUR LORS DE L'UPLOAD D'IMAGE LORS D'UNE PUBLICATION VE
 - Rendez vous dans le sous dossier 'frontend' via la commande 'cd frontend' depuis votre terminal
 - Taper 'npm install' depuis votre terminal pour installé le dossier 'node_modules' dans le projet
 - Taper 'npm start' pour demarrer le projet
-
-# Creation d'un compte administrateur
-
-- creer un compte sur l'application 
-- se rendre dans la base de données creer au préalable
-- passer dans la table/collection 'users'
-- passer isAdmin sur 'true'
