@@ -6,7 +6,7 @@ import DeleteCard from "./DeleteCard";
 import LikeButton from "./LikeButton";
 
 const Card = ({ post }) => {
-    const [isLoadind, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [isUpdated, setIsUpdated] =  useState(false);
     const [textUpdate, setTextUpdate] = useState(null);
     const usersData = useSelector((state) => state.usersReducer);
@@ -26,7 +26,7 @@ const Card = ({ post }) => {
 
     return (
         <li className='card-container' key={post._id}>
-            {isLoadind ? (
+            {isLoading ? (
                 <i className='fas fa-spinner fa-spin'></i>
             ) : (
                 <>
@@ -63,16 +63,11 @@ const Card = ({ post }) => {
                         {post.picture && (
                             <img src={post.picture} alt="illustration de la publication" className='card-pic' />
                         )}
-                        {userData._id === post.userId && (
+                        {(userData._id === post.userId || userData.isAdmin)&& (
                             <div className='button-container'>
                                 <div onClick={() => setIsUpdated(!isUpdated)}>
                                     <img src='./img/icons/edit.svg' alt='edit' />
                                 </div>
-                                <DeleteCard id={post._id} />
-                            </div>
-                        )}
-                        {userData.isAdmin && (
-                            <div className='button-container'>
                                 <DeleteCard id={post._id} />
                             </div>
                         )}
