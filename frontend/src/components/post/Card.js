@@ -71,6 +71,11 @@ const Card = ({ post }) => {
                                 <DeleteCard id={post._id} />
                             </div>
                         )}
+                        {userData.isAdmin && (
+                            <div className='button-container'>
+                                <DeleteCard id={post._id} />
+                            </div>
+                        )}
                         <div className='card-footer'>
                             <LikeButton post={post} />
                         </div>

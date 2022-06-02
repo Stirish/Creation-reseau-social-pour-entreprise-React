@@ -22,10 +22,10 @@ export const getPosts = (num) => {
 
 export const addPost = (data) => {
     return (dispatch) => {
-        return axios
-            .post(`${process.env.REACT_APP_API_URL}api/post/`, data)
+      return axios
+        .post(`${process.env.REACT_APP_API_URL}api/post/`, data)
     };
-};
+  };
 
 export const likePost = (postId, userId) => {
     return (dispatch) => {
@@ -81,4 +81,3 @@ export const deletePost = (postId) => {
             .catch((err) => console.log(err))
     };
 };
-
