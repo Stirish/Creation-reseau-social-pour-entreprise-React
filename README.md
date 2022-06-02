@@ -33,3 +33,10 @@ SI VOUS RENCONTRER UNE ERREUR LORS DE L'UPLOAD D'IMAGE LORS D'UNE PUBLICATION VE
 - Rendez vous dans le sous dossier 'frontend' via la commande 'cd frontend' depuis votre terminal
 - Taper 'npm install' depuis votre terminal pour installé le dossier 'node_modules' dans le projet
 - Taper 'npm start' pour demarrer le projet
+
+# Creation d'un compte administrateur
+
+- creer un compte sur l'application 
+- se rendre dans la base de données creer au préalable
+- passer dans la table/collection 'users'
+- passer isAdmin sur 'true'

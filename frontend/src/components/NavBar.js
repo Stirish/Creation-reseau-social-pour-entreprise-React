@@ -21,7 +21,7 @@ const NavBar = () => {
                     <ul>
                         <li></li>
                         <li className='welcome'>
-                            <NavLink exact to='/wall'>
+                            <NavLink exact to='/'>
                                 <h5>Bienvenue {userData.firstName}</h5>
                             </NavLink>
                         </li>

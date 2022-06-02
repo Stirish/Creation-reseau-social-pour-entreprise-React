@@ -1,14 +1,14 @@
 @font-face {
   font-family: "font-1";
-  src: url(./assets/fonts/JosefinSans-ExtraLight.ttf);
+  src: url(./assets/fonts/Lato-Light.ttf);
 }
 @font-face {
   font-family: "font-2";
-  src: url(./assets/fonts/JosefinSans-Regular.ttf);
+  src: url(./assets/fonts/Lato-Regular.ttf);
 }
 @font-face {
   font-family: "font-3";
-  src: url(./assets/fonts/JosefinSans-Bold.ttf);
+  src: url(./assets/fonts//Lato-Bold.ttf);
 }
 * {
   margin: 0;
@@ -20,12 +20,12 @@
   text-decoration: none;
 }
 *::selection {
-  background: #ff7b77;
+  background: #4E5166;
 }
 
 a,
 a:visited {
-  color: rgb(0, 22, 44);
+  color: #4E5166;
 }
 
 input,
@@ -43,8 +43,8 @@ textarea:focus {
 
 button,
 input[type=submit] {
-  background: #ffd0c4;
-  color: #ff7b77;
+  background: #FFD7D7;
+  color: #4E5166;
   font-family: "font-3", serif;
   cursor: pointer;
   transition: 0.2s;
@@ -56,8 +56,8 @@ input[type=submit] {
 }
 button:hover,
 input[type=submit]:hover {
-  background: #ff7b77;
-  color: #ffd0c4;
+  background: #FD2D01;
+  color: #FFD7D7;
 }
 
 input[type=checkbox] {
@@ -77,7 +77,7 @@ body {
   font-family: "font-2", serif;
   line-height: 1.4rem;
   background: rgb(253, 253, 253);
-  color: rgb(0, 22, 44);
+  color: #4E5166;
 }
 
 .error {
@@ -131,10 +131,10 @@ body {
   margin: 0 8px;
 }
 .wall .main .home-header .connection-form ul .active-btn {
-  background: #ff7b77;
+  background: #FD2D01;
 }
 .wall .main .home-header .connection-form ul .active-btn:hover {
-  background: #ffd0c4;
+  background: #FFD7D7;
 }
 .wall .main .home-header .connection-form ul li:not(.active-btn):hover {
   transform: translateX(3px);
@@ -171,7 +171,7 @@ nav {
   position: fixed;
   width: 100%;
   height: 45px;
-  box-shadow: 0px 2px 0px #ff7b77, 0px 5px 0px 0px rgb(219, 218, 218);
+  box-shadow: 0px 2px 0px #FD2D01, 0px 5px 0px 0px rgb(219, 218, 218);
   z-index: 10;
   top: 0;
 }
@@ -239,7 +239,7 @@ nav .nav-container ul li img {
 
 .card-container {
   grid-template-columns: 66px 1fr;
-  border: 2px solid #ffd0c4;
+  border: 2px solid #FFD7D7;
   margin: 10px;
   padding: 16px;
   border-radius: 20px;
@@ -262,7 +262,7 @@ nav .nav-container ul li img {
   top: 40%;
   left: 49%;
   font-size: 1.5rem;
-  color: #ff7b77;
+  color: #FD2D01;
 }
 .card-container .card-left img {
   height: 52px;
@@ -339,10 +339,10 @@ nav .nav-container ul li img {
   transform: scale(1.2) translate(0px, 0px);
 }
 .card-container .card-right .card-header .pseudo span .fas {
-  color: #ff7b77;
+  color: #FD2D01;
 }
 .card-container .card-right .card-header .pseudo span .far {
-  color: #ffd0c4;
+  color: #FFD7D7;
 }
 .card-container .card-right .card-header span {
   font-style: italic;
@@ -364,17 +364,17 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .update-post textarea {
   font-size: 1.3rem;
-  border: 1px solid #ffd0c4;
+  border: 1px solid #FFD7D7;
   padding: 10px;
   border-radius: 20px 20px 6px 20px;
 }
 .card-container .card-right .update-post .button-container .btn {
-  background: #ffd0c4;
+  background: #FFD7D7;
   width: 240px;
   transform: translateY(-3px);
 }
 .card-container .card-right .update-post .button-container .btn:hover {
-  background: #ff7b77;
+  background: #FD2D01;
   width: 250px;
   letter-spacing: 1px;
 }
@@ -397,7 +397,7 @@ nav .nav-container ul li img {
 .card-container .card-right .button-container div {
   padding: 5px 9px;
   margin-left: 5px;
-  background: #ffd0c4;
+  background: #FFD7D7;
   border-radius: 50px;
   transition: 0.1s;
   cursor: pointer;
@@ -445,7 +445,7 @@ nav .nav-container ul li img {
 .card-container .card-right .comment-container {
   display: grid;
   grid-template-columns: 50px 1fr;
-  border: 1px solid #ffd0c4;
+  border: 1px solid #FFD7D7;
   padding: 15px;
   margin: 5px 0;
   border-radius: 20px 20px 20px 6px;
@@ -490,7 +490,7 @@ nav .nav-container ul li img {
   margin-top: 8px;
 }
 .card-container .card-right .comment-container .edit-comment {
-  color: #ffd0c4;
+  color: #FFD7D7;
 }
 .card-container .card-right .comment-container .edit-comment img {
   float: right;
@@ -509,7 +509,7 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form label {
   background: rgb(253, 253, 253);
-  color: #ff7b77;
+  color: #FD2D01;
   padding: 6px 12px 5px;
   border-radius: 20px 20px 20px 6px;
   cursor: pointer;
@@ -542,19 +542,19 @@ nav .nav-container ul li img {
   cursor: pointer;
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn span:hover {
-  background: #ffd0c4;
+  background: #FFD7D7;
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn span img {
   transform: translate(-5px, 0);
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn input[type=submit] {
-  background: #ffd0c4;
+  background: #FFD7D7;
   width: inherit;
   transition: 0.2s;
 }
 .card-container .card-right .comment-container .edit-comment .edit-comment-form .btn input[type=submit]:hover {
   width: inherit;
-  background: #ff7b77;
+  background: #FD2D01;
 }
 .card-container .card-right .comment-form {
   margin-top: 6px;
@@ -573,23 +573,23 @@ nav .nav-container ul li img {
   margin-top: 4px;
   padding: 12px 16px;
   width: 120px;
-  background: #ffd0c4;
+  background: #FFD7D7;
   border-radius: 20px 6px 20px 20px;
   transition: 0.2s;
   float: right;
 }
 .card-container .card-right .comment-form input[type=submit]:hover {
-  background: #ff7b77;
+  background: #FD2D01;
   letter-spacing: 2px;
   width: 130px;
 }
 .card-container .card-right .comment-form button {
   float: right;
-  background: #ff7b77;
+  background: #FD2D01;
   transition: 0.2s;
 }
 .card-container .card-right .comment-form button:hover {
-  background: #ffd0c4;
+  background: #FFD7D7;
 }
 .card-container .card-right .like-container span {
   font-size: 1.02rem;
@@ -612,7 +612,7 @@ nav .nav-container ul li img {
   width: 150px;
 }
 .card-container .update-post .button-container button:nth-child(1) {
-  background: #ff7b77;
+  background: #FD2D01;
 }
 
 .profil-page {
@@ -668,10 +668,10 @@ nav .nav-container ul li img {
   }
 }
 .profil-page .connection-form .form-container ul .active-btn {
-  background: #ff7b77;
+  background: #FD2D01;
 }
 .profil-page .connection-form .form-container ul .active-btn:hover {
-  background: #ffd0c4;
+  background: #FFD7D7;
 }
 .profil-page .connection-form .form-container ul li:not(.active-btn):hover {
   transform: translateX(3px);
@@ -691,7 +691,7 @@ nav .nav-container ul li img {
     transform: translateX(-50%);
     width: 80%;
     height: 1px;
-    background: #ffd0c4;
+    background: #FFD7D7;
   }
 }
 .profil-page .connection-form .form-container form input {
@@ -775,8 +775,8 @@ nav .nav-container ul li img {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 270px;
-  background: rgb(0, 22, 44);
-  color: #ffd0c4;
+  background: #4E5166;
+  color: #FFD7D7;
   border-radius: 20px;
   display: inline-block;
   padding: 9px 0;
@@ -818,7 +818,7 @@ nav .nav-container ul li img {
 .profil-page .update-container .right-part p,
 .profil-page .update-container .right-part textarea {
   min-height: 80px;
-  border: 1px solid #ff7b77;
+  border: 1px solid #FD2D01;
   border-radius: 20px 20px 6px 20px;
   padding: 10px 20px;
   font-size: 1.1rem;
@@ -836,7 +836,7 @@ nav .nav-container ul li img {
   margin: 60px 0 10px;
 }
 .profil-page .update-container .right-part h5 {
-  background: #ff7b77;
+  background: #FD2D01;
   color: #fdeeee;
   font-family: "font-1", sans-serif;
   margin: 20px 0;
@@ -869,7 +869,7 @@ nav .nav-container ul li img {
   top: 10%;
   left: 50%;
   transform: translate(-100%);
-  background: #ffd0c4;
+  background: #FFD7D7;
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 0 2px rgba(131, 130, 130, 0.356);
@@ -909,7 +909,7 @@ nav .nav-container ul li img {
   background: #fdeeee;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-thumb {
-  background: #ff7b77;
+  background: #FD2D01;
 }
 .profil-page .popup-profil-container .modal ul::-webkit-scrollbar-thumb:hover {
   background: #555;
@@ -940,7 +940,7 @@ nav .nav-container ul li img {
   margin-right: 6px;
 }
 .profil-page .popup-profil-container .modal ul li .follow-handler button:hover {
-  color: rgb(0, 22, 44);
+  color: #4E5166;
   transform: translateX(2px);
 }
 
@@ -954,7 +954,7 @@ nav .nav-container ul li img {
 .post-container i {
   font-size: 1.5rem;
   margin: 20px 0;
-  color: rgb(0, 22, 44);
+  color: #4E5166;
 }
 .post-container .data {
   position: absolute;
@@ -1090,7 +1090,7 @@ nav .nav-container ul li img {
   transition: 0.2s;
 }
 .post-container .post-form .footer-form .icon button:hover {
-  background: rgb(0, 22, 44);
+  background: #4E5166;
 }
 .post-container .post-form .footer-form .icon input {
   width: 25px;
@@ -1115,7 +1115,7 @@ nav .nav-container ul li img {
 }
 .post-container .post-form .footer-form .btn-send .cancel:hover {
   color: #fdeeee;
-  background: rgb(0, 22, 44);
+  background: #4E5166;
 }
 .post-container .post-form .footer-form .btn-send .send:hover {
   letter-spacing: 2px;
