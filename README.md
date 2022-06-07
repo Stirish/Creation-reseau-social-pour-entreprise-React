@@ -4,6 +4,13 @@ Pour faire fonctionner le projet, installé la version 18.2.0 de Node.js
 
 lien vers le site node.js: https://nodejs.org/en/
 
+# Creer votre base de données
+
+Rendez vous sur: https://www.mongodb.com/fr-fr
+
+- Créer votre cluster
+- Importer (si il y en a) les données qu'on vous a fourni pour le projet
+
 # Lancer le backend du projet
 
 - Ouvrez le dossier dans votre editeur
