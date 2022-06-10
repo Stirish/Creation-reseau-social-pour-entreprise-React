@@ -5,6 +5,8 @@ const ObjectID = require('mongoose').Types.ObjectId;
 const fs = require('fs');
 const { promisify } = require('util');
 const pipeline = promisify(require('stream').pipeline);
+const jwt = require('jsonwebtoken');
+let tokenInfo = null;
 
 // Creation d'une publication
 module.exports.createPost = async (req, res) => {
@@ -63,36 +65,72 @@ module.exports.getAllPost = (req, res) => {
 
 // Modification d'une publication
 module.exports.updatePost = (req, res) => {
-    if(!ObjectID.isValid(req.params.id))
-        return res.status(400).send('ID unknown : ' + req.params.id);
+    const token = req.cookies.jwt;
+    jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
+        
+        if (err) {
+            console.log(err);
+        }
+        else {
+            tokenInfo = decodedToken
+        }
+    });
 
     const updatedRecord = {
         message: req.body.message
     };
 
-    PostModel.findByIdAndUpdate(
-        req.params.id,
-        { $set: updatedRecord },
-        { new: true },
-        (err, docs) => {
-            if (!err) res.send(docs)
-            else console.log('Update error : ' + err);
-        }
-    )
+    PostModel.findById(req.params.id)
+        .then(post => {
+            if (!post) {
+                res.status(400).json({ error: " Pas d'autorisation !" })
+            } 
+            else {
+                console.log(tokenInfo.id);
+                if ((tokenInfo && post.userId == tokenInfo.id) || tokenInfo.isAdmin) {
+                    post.update(updatedRecord).then(post => res.status(200).json({ post }))
+                }
+                else {
+                    res.status(400).json({ error: "Vous n'avez pas l'autorisation !" })
+                }
+                
+            }
+        });
 };
 
 // Suppression d'une publication
 module.exports.deletePost = (req, res) => {
-    if(!ObjectID.isValid(req.params.id))
-        return res.status(400).send('ID unknown : ' + req.params.id);
-    
-    PostModel.findByIdAndRemove(
-        req.params.id,
-        (err, docs) => {
-            if (!err) res.send(docs);
-            else console.log('Delete error : ' + err);
+    const token = req.cookies.jwt;
+    jwt.verify(token, process.env.TOKEN_SECRET, async (err, decodedToken) => {
+        
+        if (err) {
+            console.log(err);
         }
-    )
+        else {
+            tokenInfo = decodedToken
+        }
+    });
+
+    const updatedRecord = {
+        message: req.body.message
+    };
+    
+    PostModel.findById(req.params.id)
+        .then(post => {
+            if (!post) {
+                res.status(400).json({ error: " Pas d'autorisation !" })
+            } 
+            else {
+                console.log(tokenInfo.id);
+                if ((tokenInfo && post.userId == tokenInfo.id) || tokenInfo.isAdmin) {
+                    post.delete(updatedRecord).then(post => res.status(200).json({ post }))
+                }
+                else {
+                    res.status(400).json({ error: "Vous n'avez pas l'autorisation !" })
+                }
+                
+            }
+        });
 };
 
 // Liker une publication

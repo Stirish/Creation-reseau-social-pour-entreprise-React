@@ -12,13 +12,16 @@ module.exports.checkUser = (req, res, next) => {
                 next();
             } 
             else {
+                if (req.body.userId && req.body.userId !== userId) {
+                    throw 'Invalid user ID';
+                }
                 let user = await UserModel.findById(decodedToken.id);
                 res.locals.user = user;
                 console.log(res.locals.user);
                 next();
             }
         });
-    } 
+    }
     else {
         res.locals.user = null;
         next();
