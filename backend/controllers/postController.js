@@ -56,7 +56,7 @@ module.exports.createPost = async (req, res) => {
 // Récupération des informations avec http://localhost:5000/api/post/
 module.exports.getAllPost = (req, res) => {
     PostModel.find((err, docs) => {
-        if (!err) res.send(docs);
+        if (!err) res.send(docs); 
         else console.log('Error to get data : ' + err);
     }).sort({ createdAt: -1 });
 };
