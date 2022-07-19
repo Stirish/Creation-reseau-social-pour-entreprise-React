@@ -18,7 +18,7 @@ module.exports.checkUser = (req, res, next) => {
                 next();
             }
         });
-    } 
+    }
     else {
         res.locals.user = null;
         next();
