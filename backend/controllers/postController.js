@@ -85,7 +85,6 @@ module.exports.updatePost = (req, res) => {
 module.exports.deletePost = (req, res) => {
     if(!ObjectID.isValid(req.params.id))
         return res.status(400).send('ID unknown : ' + req.params.id);
-
     PostModel.findByIdAndRemove(
         req.params.id,
         (err, docs) => {
